@@ -1,4 +1,4 @@
-import {PrismaClient, User} from '@prisma/client'
+import {PrismaClient, Role, User} from '@prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -19,6 +19,17 @@ class DbUser {
     async addUser(data: UserRegistrationData) {
         return await prisma.user.create({
             data: data
+        })
+    }
+
+    async updateUserRole(user_id: number, changeRole:Role){
+        return await prisma.user.update({
+            where: {
+                user_id: user_id
+            },
+            data: {
+                role: changeRole
+            }
         })
     }
 }

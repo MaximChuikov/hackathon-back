@@ -10,10 +10,12 @@ const router = Router()
 router.get('/2',
     query('text').isString(),
     check,
-    testController.test1)
+    testController.test2)
 
 router.delete('/3', authMid, roleAccess.adminAccess, testController.test2)
 
 router.get('/1', testController.errorTest)
-
+router.get('/6',  testController.goodTest)
+router.get('/4', authMid, testController.goodTest)
+router.get('/5', authMid, roleAccess.adminAccess,testController.goodTest)
 export default router

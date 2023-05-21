@@ -23,6 +23,15 @@ class TestController {
         }
 
     }
+
+    async goodTest(req : Request, res: Response, next: NextFunction){
+        try {
+            res.status(200).json("good")
+        }
+        catch (e){
+            next(e)
+        }
+    }
 }
 
 export default new TestController()

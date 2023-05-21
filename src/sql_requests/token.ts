@@ -30,5 +30,4 @@ class DbToken {
         })
     }
 }
-
 export default new DbToken()

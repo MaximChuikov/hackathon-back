@@ -14,7 +14,7 @@ router.post('/login',
     body('email').isEmail(),
     body('password').isString(),
     check,
-    check, authController.login);
+    authController.login);
 router.post('/logout', authController.logout);
 router.get('/refresh', authController.refresh);
 

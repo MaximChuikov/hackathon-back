@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from 'express';
-import userService from '../services/user-service'
+import userService from '../services/auth-service'
 
 class AuthorizationController {
     async registration(req: Request, res: Response, next: NextFunction) {
